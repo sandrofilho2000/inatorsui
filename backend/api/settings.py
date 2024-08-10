@@ -1,5 +1,7 @@
+from doctest import debug
 import os
 from pathlib import Path
+from re import DEBUG
 import dj_database_url
 from dotenv import load_dotenv
 
@@ -12,7 +14,10 @@ load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "True") == "True"
+if os.getenv("DEBUG") == "True":
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
