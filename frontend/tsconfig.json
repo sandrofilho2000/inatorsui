@@ -22,7 +22,7 @@
       "@/*": ["./*"],
       "@/interfaces": ["./interfaces"],
       "@/constants": ["./constants"],
-      "@/lib/utils": ["./lib/utils"]
+      "@/lib": ["./lib"]
     }
   },
   "include": [
