@@ -1,15 +1,21 @@
 const site_data_default = {
-  name: 'Versão 1',
-  main_color: '#E1631D',
+  name: 'Versão 1.0',
+  main_color: '#E11D48',
   hero: {
-    id: 1,
-    title: 'Kickstart your Next.JS 14 website in minutes',
-    highlight_term: 'Next.JS 14',
-    img: '/media/hero_img_6ajq0pM.jpg',
+    id: 5,
+    title: 'Your Next.js 14 website running in no time',
+    highlight_term: 'Next.js 14',
+    img: '/media/pexels-vlada-karpovich-4050470.jpg',
     text: 'Inators UI is a collection of UI components and templates based on Tailwind and Shadcn/ui, just copy and use',
     node_command: 'npx shadcn-ui@latest init',
   },
   stats: [
+    {
+      id: 1,
+      title: '150+',
+      subtitle: 'Components',
+      icon: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"></path></svg>',
+    },
     {
       id: 2,
       title: '30+',
@@ -27,12 +33,6 @@ const site_data_default = {
       title: '100%',
       subtitle: 'Copy Paste work',
       icon: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"></path></svg>',
-    },
-    {
-      id: 8,
-      title: '100M',
-      subtitle: 'In revenue',
-      icon: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><rect width="448" height="256" x="32" y="80" fill="none" stroke-linejoin="round" stroke-width="32" rx="16" ry="16" transform="rotate(180 256 208)"></rect><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M64 384h384M96 432h320"></path><circle cx="256" cy="208" r="80" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></circle><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M480 160a80 80 0 0 1-80-80M32 160a80 80 0 0 0 80-80m368 176a80 80 0 0 0-80 80M32 256a80 80 0 0 1 80 80"></path></svg>',
     },
   ],
   features: [
@@ -55,15 +55,15 @@ const site_data_default = {
       title: 'Make Next.js 14 your new playground',
       subtitle: 'Easy to use UI elements based on Tailwind CSS and Shadcn/ui',
       text: 'Inators UI is a toolkit for developers and designers to make creating nextjs client side as well as server side interfaces easier. Using Shadcn-ui components as base and added missing necessary components, Inators UI have multiple components to help you get started. Everything is modular and customizable to fit your project. From cards to buttons to blogs, you can quickly create a variety of layouts that is responsible for next.js 14 and look great on any screen.',
-      img: '/media/feature_1_obgrcwF.jpg',
+      img: '/media/feature_1.jpg',
     },
   ],
   banner: {
-    id: 2,
-    title: 'Follow on Youtube for more project updates',
+    id: 1,
+    title: 'Follow on github for more project updates',
     subtitle: 'When I add something new, you will be the first to know',
-    cta_text: 'Youtube',
-    cta_link: 'https://www.youtube.com/channel/UCuKuPzkZOdnc4JStj_HIVYQ',
+    cta_text: 'Github',
+    cta_link: 'https://github.com/siddhartha-up80',
   },
   faq: {
     id: 1,
