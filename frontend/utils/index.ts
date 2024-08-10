@@ -1,11 +1,6 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
 import axios from "axios";
 import site_data_default from "@/constants";
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
 
 export async function api(id?: number) {
   let url = process.env.API_URL + "/site_versions/";

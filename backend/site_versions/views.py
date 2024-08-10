@@ -16,8 +16,8 @@ from site_versions.models import SiteVersion
 from site_versions.serializers import SiteVersionSerializer
 from stats.models import Stat
 from stats.serializers import StatSerializer
+from django.utils.cache import add_never_cache_headers
 
-# Create your views here.
 
 
 class SiteVersionDetailView(generics.GenericAPIView):
@@ -80,4 +80,7 @@ class SiteVersionDetailView(generics.GenericAPIView):
             "banner": banner,
             "faq": faq,
         }
-        return Response(site_data)
+        
+        response = Response(site_data)
+        add_never_cache_headers(response)  # Prevents caching
+        return response
