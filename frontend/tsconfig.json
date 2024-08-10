@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["./*"],
       "@/interfaces": ["./interfaces"],
-      "@/constants": ["./constants"]
+      "@/constants": ["./constants"],
+      "@/utils": ["./utils"]
     }
   },
   "include": [

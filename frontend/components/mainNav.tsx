@@ -9,9 +9,9 @@ export default function MainNav() {
   const [state, setState] = React.useState(false);
 
   const menus = [
-    { title: 'Components', path: '/inators' },
-    { title: 'Documentation', path: '/docs' },
-    { title: 'Feedback', path: '/contact' },
+    { title: 'Components', path: '#' },
+    { title: 'Documentation', path: '#' },
+    { title: 'Feedback', path: '#' },
   ];
 
   return (
