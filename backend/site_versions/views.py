@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from rest_framework import generics
 from rest_framework.response import Response
-
+from rest_framework_api_key.permissions import HasAPIKey
 from banners.models import Banner
 from banners.serializers import BannerSerializer
 from faqs.models import Faq
@@ -22,6 +22,7 @@ from stats.serializers import StatSerializer
 
 class SiteVersionDetailView(generics.GenericAPIView):
     serializer_class = SiteVersionSerializer
+    permission_classes = [HasAPIKey]
 
     def get(self, request, *args, **kwargs):
         pk = kwargs.get("pk")

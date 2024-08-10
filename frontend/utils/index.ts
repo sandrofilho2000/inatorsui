@@ -15,7 +15,11 @@ export async function api(id?: number) {
   }
 
   try {
-    const res = await axios.get(url);
+    const res = await axios.get(url, {
+      headers: {
+        Authorization: `Api-Key ${process.env.API_KEY}`,
+      },
+    });
     return res.data;
   } catch (error) {
     console.log("Erro na requisição: " + error);

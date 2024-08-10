@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "site_versions",
     "colorfield",
     "heros",
+    "rest_framework_api_key",
     "rest_framework",
     "stats",
     "icons",
@@ -36,6 +37,16 @@ INSTALLED_APPS = [
     "banners",
     "faqs",
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.BasicAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -57,7 +68,7 @@ ROOT_URLCONF = "api.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -121,10 +132,44 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "static/"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+from google.oauth2 import service_account
+
+
+DEFAULT_FILE_STORAGE = os.environ.get("DEFAULT_FILE_STORAGE")
+GS_BUCKET_NAME = os.environ.get("GS_BUCKET_NAME")
+
+
+GS_CREDENTIALS = {
+    "type": os.environ.get("GS_CREDENTIALS_TYPE"),
+    "project_id": os.environ.get("GS_PROJECT_ID"),
+    "private_key_id": os.environ.get("GS_CREDENTIALS_PRIVATE_KEY_ID"),
+    "private_key": os.environ.get("GS_CREDENTIALS_PRIVATE_KEY").replace("\\n", "\n"),
+    "client_email": os.environ.get("GS_CREDENTIALS_CLIENT_EMAIL"),
+    "client_id": os.environ.get("GS_CREDENTIALS_CLIENT_ID"),
+    "auth_uri": os.environ.get("GS_CREDENTIALS_AUTH_URI"),
+    "token_uri": os.environ.get("GS_CREDENTIALS_TOKEN_URI"),
+    "auth_provider_x509_cert_url": os.environ.get(
+        "GS_CREDENTIALS_AUTH_PROVIDER_X509_CERT_URL"
+    ),
+    "client_x509_cert_url": os.environ.get("GS_CREDENTIALS_CLIENT_X509_CERT_URL"),
+}
+
+# Convert credentials to service account credentials object
+GS_CREDENTIALS_OBJECT = service_account.Credentials.from_service_account_info(
+    GS_CREDENTIALS
+)
+
+GS_CREDENTIALS = GS_CREDENTIALS_OBJECT
+
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+CORS_ALLOWED_ORIGINS = [
+    "https://ldm-omega.vercel.app",
+]
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWS_CREDENTIALS = True
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+MEDIA_ROOT = "media/"
+UPLOAD_ROOT = "media/uploads/"
+MEDIA_URL = f"{os.environ.get('MEDIA_URL')}/{GS_BUCKET_NAME}/"

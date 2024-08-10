@@ -19,7 +19,7 @@ Easy to use UI elements based on Tailwind CSS and Shadcn/ui""",
         default="""Inators UI is a toolkit for developers and designers to make creating nextjs client side as well as server side interfaces easier. Using Shadcn-ui components as base and added missing necessary components, Inators UI have multiple components to help you get started. Everything is modular and customizable to fit your project. From cards to buttons to blogs, you can quickly create a variety of layouts that is responsible for next.js 14 and look great on any screen.""",
     )
 
-    img = models.ImageField()
+    img = models.ImageField(upload_to="")
 
     def __str__(self):
         return self.title
