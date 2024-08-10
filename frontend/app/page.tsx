@@ -1,5 +1,5 @@
 import HomeMain from '@/components/ui/HomeMain';
-import { api } from '@/lib/utils';
+import { api } from '@/lib/api';
 
 export default async function Home() {
   const data = await api();
