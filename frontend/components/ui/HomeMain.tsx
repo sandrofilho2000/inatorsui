@@ -10,7 +10,7 @@ import RootStyles from '../RootStyles';
 
 const HomeMain = ({ data }: { data: iSiteData }) => {
   return (
-    <main className="">
+    <main className="main" id="main">
       <RootStyles data={data.main_color || site_data_default.main_color} />
       <Hero data={data.hero || site_data_default.hero} />
       <Stats data={data.stats || site_data_default.stats} />

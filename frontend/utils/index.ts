@@ -13,6 +13,7 @@ export async function api(id?: number) {
     const res = await axios.get(url, {
       headers: {
         Authorization: `Api-Key ${process.env.API_KEY}`,
+        'Cache-Control': 'no-cache',
       },
     });
     return res.data;
